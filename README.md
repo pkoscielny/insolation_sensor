@@ -1,5 +1,5 @@
 # Insolation sensor
-Insolation sensor project based on ESP8266 device. It measures resistance dependent value and then send result to given ZeroIoT server.
+Insolation sensor project based on ESP8266 device. It measures resistance dependent value and then sends the result to the given ZeroIoT server once per minute.
 The resistance corelates with insolation value.
 
 ## Hardware

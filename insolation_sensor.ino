@@ -1,4 +1,7 @@
 /*  
+ * IDE: Arduino IDE 1.8.13
+ * Board: LOLIN(WEMOS) D1 R2 & mini.
+ *
  * Hardware:
  * - ESP8266 WeMos D1 mini board.
  * - 10k-20k GL5528 photoresistor.
@@ -44,28 +47,28 @@ void send_insolation_to_iot_server(int insolation) {
   // WiFi library should automatically reconnect to WiFi network.
 
   String attributes = String("{")
-    + "\"insolation\":\""  + String(insolation) + "\""
-    + ",\"device\":\""     + device_id          + "\""
+    + "\"insolation\":\"" + String(insolation) + "\""
+    + ",\"device\":\""    + device_id          + "\""
     + "}";
   
   String data = String("{")
-    + "\"type\":\"insolation\","
-    + "\"attributes\":" + attributes
+    + "\"type\":\"insolation\""
+    + ",\"attributes\":" + attributes
     + "}";
  
   String json_to_send = String("{")
     + "\"data\":" + data
     + "}";
-  Serial.print("json_to_send: "); Serial.println(json_to_send);
+  //Serial.print("json_to_send: "); Serial.println(json_to_send);
 
   HTTPClient http;
   http.begin(iot_server_url);
-  http.addHeader("Content-Type", "application/json");
+  http.addHeader("Content-Type", "application/vnd.api+json");
   int http_code = http.POST(json_to_send);
   
-//  Serial.print("http code: "); Serial.println(http_code);
-//  String payload = http.getString();
-//  Serial.print("payload: "); Serial.println(payload);
+  //Serial.print("http code: "); Serial.println(http_code);
+  //String payload = http.getString();
+  //Serial.print("payload: "); Serial.println(payload);
   
   http.end();
 }
