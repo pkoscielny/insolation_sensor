@@ -11,10 +11,14 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
+// WiFi settings.
 const char* ssid   = "****";
 const char* passwd = "****";
 String iot_server_url = "http://your_zeroiot_server_address:3000/insolation"; // zeroiot
 String device_id = "esp8266_wemos_1";
+
+// Analog read.
+const int analog_input = A0;
 
 void setup() {
   Serial.begin(115200);
@@ -30,10 +34,9 @@ void setup() {
 }
 
 
-
 int insolation;
 void loop() {
-  insolation = analogRead(A0);
+  insolation = analogRead(analog_input);
   
   Serial.print("insolation: "); Serial.println(insolation);
   send_insolation_to_iot_server(insolation);

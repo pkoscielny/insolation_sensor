@@ -8,3 +8,6 @@ The resistance corelates with insolation value.
 * ESP8266 WeMos D1 mini board
 * GL5528 10k-20k photoresistor
 * 10k resistor
+
+### Breadboard circuit diagram
+![circuit](/img/insolation_sensor.png)
