@@ -10,4 +10,4 @@ The resistance corelates with insolation value.
 * 10k resistor
 
 ### Breadboard circuit diagram
-![circuit](/img/insolation_sensor.png)
+![circuit](/fz/insolation_sensor.png)
