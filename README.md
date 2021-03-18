@@ -11,3 +11,18 @@ The resistance corelates with insolation value.
 
 ### Breadboard circuit diagram
 ![circuit](/fz/insolation_sensor.png)
+
+
+### Visualisation of data from the sensor 
+
+Sunny day. There were some clounds in the morning and then the sky was clear. 
+![circuit](/img/sunny_day_24h.png)
+
+
+Rainy day. 
+![circuit](/img/rainy_day_24h.png)
+
+
+Sunny and cloudy days a month.
+![circuit](/img/sunny_and_cloudy_days_month.png)
+
